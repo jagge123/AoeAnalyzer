@@ -8,7 +8,6 @@ app.use(express.static('public'))
 app.get('/aoe', function (req, res) {
     axios.get('https://aoe2.net/api/strings?game=aoe2de&language=en')
     .then(response => {
-        //res.sendFile(response.data, {root: __dirname});
         res.json(response.data); 
     })
   })
