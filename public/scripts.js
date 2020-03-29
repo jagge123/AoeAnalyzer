@@ -7,7 +7,7 @@ fetch('/aoe')
     //Hämta ut 'root' och sedan försöka skriva till det
     //document finns metoder för hur man hittar element
     var element = document.getElementById('root');
-    element.innerHTML = ''
+    element.innerHTML = JSON.stringify(data);
     console.log(data);
   });
 
