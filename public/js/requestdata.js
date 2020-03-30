@@ -4,6 +4,7 @@ const leaderboardElement = document.getElementById('displayLeaderboardTypes');
 const mapTypesElement = document.getElementById('displayMapTypes');
 const lastestGameElement = document.getElementById('displayLatestGame');
 const latestMatchButton = document.getElementById("latestMatchButton");
+const latestMatchesButton = document.getElementById("latestMatchButton");
 
 
 document.getElementById("latestMatchButton").addEventListener("click", function(){
@@ -51,15 +52,23 @@ function getOverallData(){
   });
 }
 
-function getLastMatch(id){
-  return fetch(`/aoe/${id}`)
+function getLastGame(id){
+  return fetch(`/aoe/games/recent/${id}`)
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     lastestGameElement.innerHTML = JSON.stringify(data);
   })
+
+  function getLastGames(id){
+    return fetch(`/aoe/games/${id}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      //latestMatchesButton.innerHTML = JSON.stringify(data);
+    })
   
 }
 
