@@ -12,4 +12,11 @@ app.get('/aoe', function (req, res) {
     })
   })
 
+  app.get('/aoe/:id', function (req, res) {
+    axios.get(`https://aoe2.net/api/strings?steamid=${req.params.id}`)
+    .then(response => {
+        res.json(response.data); 
+    })
+  })
+//prettier för formattering --- kanske vs code extension
 app.listen(port);
