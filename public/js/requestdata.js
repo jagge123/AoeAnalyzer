@@ -1,3 +1,4 @@
+// File for callback and requests
 const civElement = document.getElementById('displayCivilizations');
 const leaderboardElement = document.getElementById('displayLeaderboardTypes');
 const mapTypesElement = document.getElementById('displayMapTypes');
@@ -15,6 +16,16 @@ function getCivilizations(){
   .then((data) => {
     console.log(data);
     civElement.innerHTML = JSON.stringify(data.civ);
+    let container = document.getElementById("responseContainer");
+    let outputHTML = '<ul class="list-group"> \n'
+    
+
+    for(civ of data['civ']){
+      outputHTML += '<li class="list-group-item">' + civ['id'] + ': ' +  civ['string'] + '</li> \n'
+    }
+    outputHTML += '</ul>'
+    container.innerHTML = outputHTML;
+    console.log(data['civ'])
   })
 }
 

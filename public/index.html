@@ -7,27 +7,44 @@
     <title>Jagge app</title>
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
   </head>
 
   <body>
-    <div>
-      <button onclick="getCivilizations()">Civilizations</button>
+    <div class="container">
+      <!-- Navigation -->
+      <div class="btn-group" role="group" aria-label="navigation">
+        <button type="button" class="btn btn-light">Civilizations</button>
+        <button type="button" class="btn btn-light">Leaderboard types</button>
+        <button type="button" class="btn btn-light">Maps</button>
+        <button type="button" class="btn btn-light">Latest game</button>
+      </div>
+
+      <div class="container" id="responseContainer">
+
+      </div>
+      <div>
+        <button onclick="getCivilizations()">Civilizations</button>
+      </div>
+      <div id="displayCivilizations"></div>
+      <div>
+        <button onclick="getLeaderboardTypes()">Leaderboard types</button>
+      </div>
+      <div id="displayLeaderboardTypes"></div>
+      <div>
+        <button onclick="getMapTypes()">Maps</button>
+      </div>
+      <div id="displayMapTypes"></div>
+      <div>
+        <input id ="steamid" placeholder="Enter steam id"/>
+        <button id ="latestMatchButton">Latest game</button>
+      </div>
+      <div id="displayLatestGame"></div>
+      <script src="js/requestdata.js"></script>
     </div>
-    <div id="displayCivilizations"></div>
-    <div>
-      <button onclick="getLeaderboardTypes()">Leaderboard types</button>
-    </div>
-    <div id="displayLeaderboardTypes"></div>
-    <div>
-      <button onclick="getMapTypes()">Maps</button>
-    </div>
-    <div id="displayMapTypes"></div>
-    <div>
-      <input id ="steamid" placeholder="Enter steam id"/>
-      <button id ="latestMatchButton">Latest game</button>
-    </div>
-    <div id="displayLatestGame"></div>
-    <script src="scripts.js"></script>
   </body>
+
 </html>
