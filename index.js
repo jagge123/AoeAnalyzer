@@ -12,11 +12,19 @@ app.get('/aoe', function (req, res) {
     })
   })
 
-  app.get('/aoe/:id', function (req, res) {
+  app.get('/aoe/games/recent/:id', function (req, res) {
     axios.get(`https://aoe2.net/api/player/lastmatch?game=aoe2de&steam_id=${req.params.id}`)
     .then(response => {
         res.json(response.data); 
     })
   })
+
+  app.get('/aoe/games/:id', function (req, res) {
+    axios.get(`https://aoe2.net/api/player/matches?game=aoe2de&steam_id=${req.params.id}&count=10`)
+    .then(response => {
+        res.json(response.data);
+    })
+  })
+  
 //prettier för formattering --- kanske vs code extension
 app.listen(port);
