@@ -59,16 +59,17 @@ function getLastGame(id){
   })
   .then((data) => {
     lastestGameElement.innerHTML = JSON.stringify(data);
-  })
+  });
+}
 
-  function getLastGames(id){
-    return fetch(`/aoe/games/${id}`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      //latestMatchesButton.innerHTML = JSON.stringify(data);
-    })
+function getLastGames(id){
+  return fetch(`/aoe/games/${id}`)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    //latestMatchesButton.innerHTML = JSON.stringify(data);
+  });
   
 }
 
